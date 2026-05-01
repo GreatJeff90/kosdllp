@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/code.png">
+    <title>Contact KO Software Delights | Start Your Build</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .modal-overlay { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); }
+        
+        /* Modal Animation */
+        #success-modal { display: none; }
+        #success-modal.flex { display: flex; animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-700 min-h-screen flex flex-col relative">
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-[100] items-center justify-center p-4 modal-overlay">
+        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 max-w-sm w-full text-center shadow-2xl">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                ✓
+            </div>
+            <h3 class="text-2xl font-extrabold mb-2">Message Sent!</h3>
+            <p class="text-slate-500 text-sm mb-8">Engineering lead will review your venture details and reach out shortly.</p>
+            <button onclick="closeModal()" class="w-full bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-slate-800 transition">
+                Back to Form
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass border-b border-slate-200/50 sticky top-0 z-50">
+        <div class="flex items-center justify-between px-6 md:px-12 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-3 font-extrabold text-xl tracking-tighter">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <span>KO<span class="text-blue-600">SD</span></span>
+            </a>
+            <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition flex items-center gap-2">
+                ← Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            <!-- Text Content -->
+            <div>
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-8">
+                    Let’s build the <span class="text-blue-600">future</span> of your product.
+                </h1>
+                <p class="text-lg text-slate-500 mb-12 leading-relaxed max-w-md">
+                    Whether you are looking for a technical co-founder, an MVP build, or scaling your existing infrastructure—we're ready to engineer it.
+                </p>
+
+                <!-- Contact Points -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-slate-200 flex items-center justify-center text-xl">
+                            ✉️
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Direct Line</h4>
+                            <a href="mailto:kosoftware.delights@gmail.com" class="text-blue-600 font-medium hover:underline">
+                                kosoftware.delights@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-slate-200 flex items-center justify-center text-xl">
+                            💬
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Response Time</h4>
+                            <p class="text-slate-500 text-sm">Our technical team typically responds within <span class="font-bold text-slate-900">4 business hours</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 p-6 bg-slate-900 rounded-[2rem] text-white">
+                    <p class="text-xs font-bold tracking-widest text-blue-400 uppercase mb-2">Operational Hours</p>
+                    <p class="text-sm text-slate-300">We operate as a global-first startup. Supporting teams across UTC-5 to UTC+3.</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-slate-200/50 border border-slate-100">
+                <form id="contact-form" action="https://formspree.io/f/mbdwldnr" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Full Name</label>
+                            <input type="text" name="name" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Email Address</label>
+                            <input type="email" name="email" required placeholder="john@company.com" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Service Required</label>
+                        <select name="service" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition appearance-none">
+                            <option>MVP Development (0 to 1)</option>
+                            <option>Scaling & Infrastructure</option>
+                            <option>AI Integration</option>
+                            <option>Technical Audit</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 ml-1">Tell us about your venture</label>
+                        <textarea name="message" rows="4" required placeholder="What are you building?" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white font-bold py-5 rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Submit Inquiry
+                    </button>
+                    
+                    <p class="text-center text-[10px] text-slate-400 uppercase tracking-widest">
+                        By submitting, you agree to our privacy policy.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs text-slate-400 font-bold tracking-[0.2em]">© 2026 KO SOFTWARE DELIGHTS</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const modal = document.getElementById('success-modal');
+        const submitBtn = document.getElementById('submit-btn');
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+
+            const data = new FormData(event.target);
+            
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    modal.classList.add('flex');
+                    form.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again or email us directly.");
+                }
+            } catch (error) {
+                alert("Technical error. Please check your connection and try again.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Submit Inquiry';
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('flex');
+        }
+
+        form.addEventListener("submit", handleSubmit);
+    </script>
+
+</body>
+</html>

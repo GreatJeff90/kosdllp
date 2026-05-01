@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/code.png">
+    <title>KO Software Delights | Engineering Scalable Ventures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-clip { border-radius: 2.5rem; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .status-dot { animation: pulse-soft 2s infinite; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-700">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200/50">
+        <div class="flex items-center justify-between px-6 md:px-12 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 font-extrabold text-xl tracking-tighter">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <span>KO<span class="text-blue-600">SD</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-10 text-sm font-semibold text-slate-600">
+                <a href="#services" class="hover:text-blue-600 transition">Capabilities</a>
+                <a href="#work" class="hover:text-blue-600 transition">Work</a>
+                <a href="#stack" class="hover:text-blue-600 transition">Infrastructure</a>
+                <a href="#" class="hover:text-blue-600 transition">Documentation</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition shadow-lg shadow-slate-200 active:scale-95 inline-block">
+                    Build My MVP
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-6">
+        <div class="relative bg-slate-900 hero-clip overflow-hidden min-h-[600px] flex items-center shadow-2xl">
+            <!-- Professional Hero Image -->
+            <img 
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000&q=80" 
+                alt="Cyber-physical systems" 
+                class="absolute inset-0 w-full h-full object-cover opacity-40"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+            
+            <div class="relative z-10 px-8 md:pl-20 py-20 max-w-3xl text-white">
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full mb-6">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 status-dot"></span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-blue-400">Available for Q3 Projects</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.05] mb-8">
+                    We engineer <span class="text-blue-400">venture-grade</span> software.
+                </h1>
+                <p class="text-lg text-slate-300 mb-10 max-w-xl leading-relaxed">
+                    Stop building features and start building products. We partner with founders to design, architect, and deploy high-performance digital infrastructure.
+                </p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <button class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-900/20 hover:bg-blue-500 transition-all hover:-translate-y-1">
+                        Get Technical Proposal
+                    </button>
+                    <button class="text-slate-300 font-bold text-sm hover:text-white transition flex items-center gap-2 border-b border-slate-700 pb-1">
+                        View System Architecture →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Operational Metric Card (Replaces Testimonials) -->
+            <div class="absolute bottom-8 right-8 hidden lg:block glass p-6 rounded-3xl border border-white/20 shadow-2xl max-w-xs">
+                <p class="text-[10px] font-black uppercase text-blue-600 tracking-widest mb-4">Live System Health</p>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-500">Uptime</span>
+                        <span class="font-bold text-slate-800">99.98%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-green-500 h-full w-[98%]"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-slate-500">Deploy Speed</span>
+                        <span class="font-bold text-slate-800">&lt; 15 mins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Grid -->
+    <section id="stack" class="max-w-7xl mx-auto px-6 py-20">
+        <p class="text-center text-[11px] font-bold tracking-[0.3em] text-slate-400 uppercase mb-10">Battle-Tested Infrastructure</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="flex justify-center font-bold text-xl">Typescript</div>
+            <div class="flex justify-center font-bold text-xl">Kubernetes</div>
+            <div class="flex justify-center font-bold text-xl">Next.js</div>
+            <div class="flex justify-center font-bold text-xl">GoLang</div>
+            <div class="flex justify-center font-bold text-xl">Redis</div>
+            <div class="flex justify-center font-bold text-xl">Terraform</div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="services" class="max-w-7xl mx-auto px-6 md:px-12 py-20 bg-white rounded-[3rem] shadow-sm border border-slate-100">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Software that <span class="text-blue-600">scales</span> without the friction.</h2>
+                <p class="text-slate-500 text-lg mb-10 leading-relaxed">
+                    We don't just write code; we build the technical foundation for your business growth. From initial architecture to global scaling.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-1">✓</div>
+                        <div>
+                            <h4 class="font-bold">Zero-Downtime Deployment</h4>
+                            <p class="text-sm text-slate-500">Robust CI/CD pipelines designed for rapid iteration.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mt-1">✓</div>
+                        <div>
+                            <h4 class="font-bold">Security-First Culture</h4>
+                            <p class="text-sm text-slate-500">SOC2 compliant workflows and encrypted data layers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="text-3xl mb-4">☁️</div>
+                    <h3 class="font-bold mb-2">Cloud Native</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Serverless & Containerized architectures for infinite scale.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-3xl text-white">
+                    <div class="text-3xl mb-4">⚡</div>
+                    <h3 class="font-bold mb-2 text-blue-400">Fast-Track MVP</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">From concept to production in as little as 6 weeks.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="font-bold mb-2">AI Ready</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Integrating LLMs and Vector DBs into existing workflows.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="text-3xl mb-4">📱</div>
+                    <h3 class="font-bold mb-2">Cross-Platform</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Native performance on Web, iOS, and Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="max-w-7xl mx-auto px-6 md:px-12 py-24">
+        <div class="flex justify-between items-end mb-16">
+            <h2 class="text-4xl font-extrabold tracking-tight">Internal Ventures <br>& Case Studies</h2>
+            <button class="hidden md:block px-6 py-2 border-2 border-slate-900 rounded-full font-bold text-sm hover:bg-slate-900 hover:text-white transition">View All Projects</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="group">
+                <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Lumina Financial</h3>
+                <p class="text-slate-500 text-sm mb-4">Scaling a fintech backend to support 1M+ transactions per second.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Rust</span>
+                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">AWS</span>
+                </div>
+            </div>
+            <div class="group">
+                <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Nexus Healthcare</h3>
+                <p class="text-slate-500 text-sm mb-4">HIPAA-compliant patient portal with real-time AI triage.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">React</span>
+                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12 mt-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-20">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 font-extrabold text-2xl mb-8 tracking-tighter">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px]">KOSD</div>
+                        KO SOFTWARE DELIGHTS
+                    </div>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-sm">
+                        Building the next generation of digital infrastructure for ambitious startups.
+                    </p>
+                    <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-500 transition">Let's Talk Shop</a>
+                </div>
+
+                <div>
+                    <h4 class="text-blue-400 font-bold mb-8 uppercase text-xs tracking-widest">Engineering</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Architecture Audit</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cloud Cost Optimization</a></li>
+                        <li><a href="#" class="hover:text-white transition">Full-stack Delivery</a></li>
+                        <li><a href="#" class="hover:text-white transition">CTO as a Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-blue-400 font-bold mb-8 uppercase text-xs tracking-widest">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Our Stack</a></li>
+                        <li><a href="#" class="hover:text-white transition">Open Source</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Brand Kit</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-500">© 2026 KOSD Engineering. Built for the decentralized web.</p>
+                <div class="flex gap-8 text-xs text-slate-500 font-bold uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition">Status</a>
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
