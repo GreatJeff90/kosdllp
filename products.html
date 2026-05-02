@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/code.png">
+    <title>The Lab | KO Software Delights Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/fluentui-system-icons/1.1.188/assets/Lightning/SVG/ic_fluid_lightning_24_filled.svg">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .product-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-card:hover { transform: translateY(-8px); }
+        .progress-bar { height: 6px; border-radius: 99px; background: #f1f5f9; overflow: hidden; }
+        .progress-fill { transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-700 min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="glass border-b border-slate-200/50 sticky top-0 z-50">
+        <div class="flex items-center justify-between px-6 md:px-12 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-3 font-extrabold text-xl tracking-tighter">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <span>KO<span class="text-blue-600">SD</span></span>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-sm font-semibold text-slate-500 hover:text-slate-900 transition">Home</a>
+                <a href="contact.html" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-600 transition shadow-md active:scale-95">Get Updates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-6">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">The Lab Pipeline</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">Engineering the <span class="text-blue-600 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Next Delights.</span></h1>
+        <p class="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto">
+            We are currently incubating four high-performance utilities designed to simplify complex digital workflows. These tools represent our internal commitment to excellence.
+        </p>
+    </header>
+
+    <!-- Products Grid -->
+    <main class="max-w-7xl mx-auto px-6 md:px-12 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Product 1: PDF Converter -->
+            <div class="product-card bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner">📄</div>
+                    <span class="text-[10px] font-bold bg-red-50 text-red-600 px-3 py-1 rounded-full uppercase tracking-widest border border-red-100">v0.1 Alpha</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 tracking-tight">SwiftPDF Pro</h3>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed">Privacy-first PDF conversion and compression. No cloud uploads—everything happens securely in your browser's sandbox using WebAssembly.</p>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        <span>Development Progress</span>
+                        <span class="text-slate-900">85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill bg-red-500 h-full w-[85%]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Focus Timer/Ops -->
+            <div class="product-card bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner">⚡</div>
+                    <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full uppercase tracking-widest border border-slate-200">In Design</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 tracking-tight">FocusOps Dashboard</h3>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed">A minimalist command center for developers. Integrated pomodoro, Jira ticket tracking, and PR reminders in one terminal-style UI.</p>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        <span>Development Progress</span>
+                        <span class="text-slate-900">40%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill bg-blue-600 h-full w-[40%]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: API Monitor -->
+            <div class="product-card bg-slate-900 p-10 rounded-[3rem] text-white shadow-xl hover:shadow-blue-900/20">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-3xl">📡</div>
+                    <span class="text-[10px] font-bold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full uppercase tracking-widest border border-blue-500/30">Internal Beta</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 tracking-tight">Beacon Status</h3>
+                <p class="text-slate-400 text-sm mb-8 leading-relaxed">One-click status pages for your APIs. Beautiful, real-time monitoring that actually looks good enough to show your users and investors.</p>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                        <span>Development Progress</span>
+                        <span class="text-white">92%</span>
+                    </div>
+                    <div class="progress-bar bg-white/10">
+                        <div class="progress-fill bg-blue-500 h-full w-[92%]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Color Palette/Design -->
+            <div class="product-card bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl">
+                <div class="flex justify-between items-start mb-12">
+                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner">🎨</div>
+                    <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full uppercase tracking-widest border border-slate-200">Ideation</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 tracking-tight">ChromaCore</h3>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed">AI-driven accessibility color engine. Generates WCAG-compliant themes for SaaS dashboards based on your brand's core values.</p>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        <span>Development Progress</span>
+                        <span class="text-slate-900">15%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill bg-purple-500 h-full w-[15%]"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Call to Action -->
+    <section class="max-w-4xl mx-auto px-6 pb-24 text-center">
+        <div class="bg-blue-600 rounded-[3rem] p-12 text-white shadow-2xl shadow-blue-200 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Want early access?</h2>
+            <p class="text-blue-100 mb-8 max-w-md mx-auto">We release alpha builds to our core community first. Join the waitlist to test our newest delights.</p>
+            <form action="https://formspree.io/f/mbdwldnr" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Email address" class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 outline-none focus:bg-white/20 transition placeholder:text-blue-200 text-sm">
+                <button type="button" onclick="location.href='contact.html'" class="bg-white text-blue-600 font-bold px-8 py-4 rounded-2xl hover:bg-blue-50 transition active:scale-95 shadow-lg">
+                    Notify Me
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12 mt-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-20">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 font-extrabold text-2xl mb-8 tracking-tighter">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px]">KOSD</div>
+                        KO SOFTWARE DELIGHTS
+                    </div>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-sm">
+                        Building the next generation of digital infrastructure for ambitious startups.
+                    </p>
+                    <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-900/20">Let's Talk Shop</a>
+                </div>
+
+                <div>
+                    <h4 class="text-blue-400 font-bold mb-8 uppercase text-xs tracking-widest">Engineering</h4>
+                    <ul class="space-y-4 text-sm text-slate-400 font-medium">
+                        <li><a href="#" class="hover:text-white transition">Architecture Audit</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cloud Cost Optimization</a></li>
+                        <li><a href="#" class="hover:text-white transition">Full-stack Delivery</a></li>
+                        <li><a href="#" class="hover:text-white transition">CTO as a Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-blue-400 font-bold mb-8 uppercase text-xs tracking-widest">Company</h4>
+                    <ul class="space-y-4 text-sm text-slate-400 font-medium">
+                        <li><a href="#" class="hover:text-white transition">Our Stack</a></li>
+                        <li><a href="#" class="hover:text-white transition">Open Source</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Brand Kit</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-500 font-medium tracking-wide">© 2026 KOSD ENGINEERING. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-8 text-xs text-slate-500 font-bold uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition">Status</a>
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

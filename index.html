@@ -31,7 +31,7 @@
             
             <div class="hidden md:flex gap-10 text-sm font-semibold text-slate-600">
                 <a href="#services" class="hover:text-blue-600 transition">Capabilities</a>
-                <a href="#work" class="hover:text-blue-600 transition">Work</a>
+                <a href="products.html" class="hover:text-blue-600 transition">Products</a>
                 <a href="#stack" class="hover:text-blue-600 transition">Infrastructure</a>
                 <a href="#" class="hover:text-blue-600 transition">Documentation</a>
             </div>
@@ -67,12 +67,14 @@
                     Stop building features and start building products. We partner with founders to design, architect, and deploy high-performance digital infrastructure.
                 </p>
                 <div class="flex flex-wrap items-center gap-6">
+                    <a href="contact.html">
                     <button class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-900/20 hover:bg-blue-500 transition-all hover:-translate-y-1">
                         Get Technical Proposal
                     </button>
-                    <button class="text-slate-300 font-bold text-sm hover:text-white transition flex items-center gap-2 border-b border-slate-700 pb-1">
+                    </a>
+                    <a href="products.html" text-slate-300 font-bold text-sm hover:text-white transition flex items-center gap-2 border-b border-slate-700 pb-1">
                         View System Architecture →
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -161,36 +163,90 @@
 
     <!-- Work -->
     <section id="work" class="max-w-7xl mx-auto px-6 md:px-12 py-24">
-        <div class="flex justify-between items-end mb-16">
-            <h2 class="text-4xl font-extrabold tracking-tight">Internal Ventures <br>& Case Studies</h2>
-            <button class="hidden md:block px-6 py-2 border-2 border-slate-900 rounded-full font-bold text-sm hover:bg-slate-900 hover:text-white transition">View All Projects</button>
+    <div class="flex justify-between items-end mb-16">
+        <div>
+            <h2 class="text-4xl font-extrabold tracking-tight mb-4">Internal Ventures</h2>
+            <p class="text-slate-500 max-w-md">Currently incubating high-performance utilities in the KOSD Lab.</p>
+        </div>
+        <a href="products.html" class="hidden md:block px-8 py-3 border-2 border-slate-900 rounded-full font-bold text-sm hover:bg-slate-900 hover:text-white transition active:scale-95">
+            View Lab Pipeline
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- SwiftPDF Pro -->
+        <div class="group cursor-pointer" onclick="location.href='products.html'">
+            <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            </div>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">SwiftPDF Pro</h3>
+                    <p class="text-slate-500 text-sm mb-4">Privacy-first, browser-side PDF conversion and manipulation.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold bg-red-50 text-red-600 px-3 py-1 rounded-full uppercase border border-red-100">WASM</span>
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Utility</span>
+                    </div>
+                </div>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">85% Done</span>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="group">
-                <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <h3 class="text-2xl font-bold mb-2">Lumina Financial</h3>
-                <p class="text-slate-500 text-sm mb-4">Scaling a fintech backend to support 1M+ transactions per second.</p>
-                <div class="flex gap-2">
-                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Rust</span>
-                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">AWS</span>
-                </div>
+        <!-- Beacon Status -->
+        <div class="group cursor-pointer" onclick="location.href='products.html'">
+            <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-700">
             </div>
-            <div class="group">
-                <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Beacon Status</h3>
+                    <p class="text-slate-500 text-sm mb-4">One-click, beautiful status pages for modern API infrastructure.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Monitoring</span>
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">SaaS</span>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold mb-2">Nexus Healthcare</h3>
-                <p class="text-slate-500 text-sm mb-4">HIPAA-compliant patient portal with real-time AI triage.</p>
-                <div class="flex gap-2">
-                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">React</span>
-                    <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Python</span>
-                </div>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">92% Done</span>
             </div>
         </div>
-    </section>
+
+        <!-- FocusOps -->
+        <div class="group cursor-pointer" onclick="location.href='products.html'">
+            <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            </div>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">FocusOps</h3>
+                    <p class="text-slate-500 text-sm mb-4">A command center for developer productivity and ticket management.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Productivity</span>
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">React</span>
+                    </div>
+                </div>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">40% Done</span>
+            </div>
+        </div>
+
+        <!-- ChromaCore -->
+        <div class="group cursor-pointer" onclick="location.href='products.html'">
+            <div class="rounded-[2.5rem] overflow-hidden mb-6 aspect-video bg-slate-200">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            </div>
+            <div class="flex justify-between items-start">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">ChromaCore</h3>
+                    <p class="text-slate-500 text-sm mb-4">AI color engine for accessible, high-converting SaaS UIs.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">Design</span>
+                        <span class="text-[10px] font-bold bg-slate-100 px-3 py-1 rounded-full uppercase">AI</span>
+                    </div>
+                </div>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">15% Done</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-white pt-24 pb-12 mt-16">
