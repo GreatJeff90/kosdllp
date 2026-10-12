@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 pb-8 md:px-8">
         
         {/* Top Grid: Brand & Navigation */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 ">
           
           {/* Brand Info & Newsletter */}
           <div className="lg:col-span-4">
