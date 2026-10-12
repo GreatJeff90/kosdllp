@@ -1,14 +1,85 @@
 "use client";
 
-import { useState } from "react";
-import { Mail, Phone, ArrowUpRight, CheckCircle2, X, Loader2 } from "lucide-react";
+import { useState, useRef, useEffect, useMemo } from "react";
+import {
+  Mail,
+  Phone,
+  ArrowUpRight,
+  CheckCircle2,
+  X,
+  Loader2,
+  ChevronDown,
+  Search,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/Footer";
+
+const COUNTRIES = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
+  "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas",
+  "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+  "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei",
+  "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon",
+  "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia",
+  "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba",
+  "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark",
+  "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador",
+  "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji",
+  "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece",
+  "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
+  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland",
+  "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan",
+  "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon",
+  "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+  "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands",
+  "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+  "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal",
+  "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea",
+  "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine State",
+  "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland",
+  "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis",
+  "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino",
+  "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
+  "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia",
+  "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
+  "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania",
+  "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia",
+  "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+  "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
+  "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe",
+];
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  // Country searchable dropdown state
+  const [countrySearch, setCountrySearch] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [isCountryOpen, setIsCountryOpen] = useState(false);
+  const countryDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close country dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        countryDropdownRef.current &&
+        !countryDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsCountryOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const filteredCountries = useMemo(() => {
+    if (!countrySearch.trim()) return COUNTRIES;
+    return COUNTRIES.filter((c) =>
+      c.toLowerCase().includes(countrySearch.toLowerCase())
+    );
+  }, [countrySearch]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,10 +100,14 @@ export default function ContactPage() {
 
       if (response.ok) {
         form.reset();
+        setSelectedCountry("");
+        setCountrySearch("");
         setShowModal(true);
       } else {
         const data = await response.json();
-        setErrorMsg(data?.errors?.[0]?.message || "Failed to deliver message. Please try again.");
+        setErrorMsg(
+          data?.errors?.[0]?.message || "Failed to deliver message. Please try again."
+        );
       }
     } catch {
       setErrorMsg("Network error. Please try again later.");
@@ -53,7 +128,7 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute inset-0 block md:hidden bg-gradient-to-b from-[#0d0d0d] via-transparent to-[#0d0d0d]" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
             
             {/* Desktop Left Column: Pillar Graphic & Direct Reach */}
             <div className="relative flex flex-col justify-between lg:col-span-5 h-full">
@@ -101,9 +176,9 @@ export default function ContactPage() {
               
               <div>
                 <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
-                  Initiate <br />
+                  Let&apos;s get<br />
                   <span className="font-serif italic font-light text-neutral-300">
-                    your build.
+                    in touch.
                   </span>
                 </h1>
                 <p className="mt-4 text-sm text-neutral-400 leading-relaxed max-w-lg">
@@ -111,7 +186,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="mt-10 space-y-6 max-w-xl">
+              <form onSubmit={handleSubmit} className="mt-10 space-y-5 max-w-xl">
                 
                 {/* Full Name */}
                 <div>
@@ -127,18 +202,141 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Email Address */}
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="alex@company.com"
-                    className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-neutral-600 outline-none transition focus:border-white/30"
-                  />
+                {/* Email Address & Mobile Number */}
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="alex@company.com"
+                      className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-neutral-600 outline-none transition focus:border-white/30"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      Mobile Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      placeholder="+1 (555) 000-0000"
+                      className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-neutral-600 outline-none transition focus:border-white/30"
+                    />
+                  </div>
+                </div>
+
+                {/* Project Category & Country of Residence */}
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  
+                  {/* Category Dropdown */}
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      Project Type
+                    </label>
+                    <div className="relative">
+                      <select
+                        name="projectType"
+                        required
+                        defaultValue=""
+                        className="w-full appearance-none rounded-xl border border-white/10 bg-[#141414] px-4 py-3 text-sm text-white outline-none transition focus:border-white/30 cursor-pointer pr-10"
+                      >
+                        <option value="" disabled className="bg-[#141414] text-neutral-500">
+                          Select category
+                        </option>
+                        <option value="Website" className="bg-[#141414] text-white">
+                          Website
+                        </option>
+                        <option value="Mobile App" className="bg-[#141414] text-white">
+                          Mobile App
+                        </option>
+                        <option value="Other" className="bg-[#141414] text-white">
+                          Other
+                        </option>
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
+                    </div>
+                  </div>
+
+                  {/* Searchable Country Dropdown */}
+                  <div className="relative" ref={countryDropdownRef}>
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      Country of Residence
+                    </label>
+                    
+                    {/* Hidden input submitted with the form */}
+                    <input type="hidden" name="country" value={selectedCountry} required />
+
+                    <button
+                      type="button"
+                      onClick={() => setIsCountryOpen((prev) => !prev)}
+                      className="flex w-full items-center justify-between rounded-xl border border-white/10 bg-[#141414] px-4 py-3 text-sm text-left outline-none transition focus:border-white/30"
+                    >
+                      <span className={selectedCountry ? "text-white" : "text-neutral-500"}>
+                        {selectedCountry || "Select or search country"}
+                      </span>
+                      <ChevronDown className="h-4 w-4 text-neutral-400 shrink-0 ml-2" />
+                    </button>
+
+                    <AnimatePresence>
+                      {isCountryOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute left-0 right-0 top-full mt-2 z-50 rounded-xl border border-white/10 bg-[#161616] p-2 shadow-2xl backdrop-blur-xl"
+                        >
+                          {/* Search Filter Input */}
+                          <div className="relative mb-2">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-neutral-400" />
+                            <input
+                              type="text"
+                              value={countrySearch}
+                              onChange={(e) => setCountrySearch(e.target.value)}
+                              placeholder="Search country..."
+                              className="w-full rounded-lg border border-white/10 bg-white/5 py-1.5 pl-8 pr-3 text-xs text-white placeholder-neutral-500 outline-none focus:border-white/30"
+                              autoFocus
+                            />
+                          </div>
+
+                          {/* Country List */}
+                          <div className="max-h-52 overflow-y-auto space-y-0.5 pr-1">
+                            {filteredCountries.length > 0 ? (
+                              filteredCountries.map((c) => (
+                                <button
+                                  key={c}
+                                  type="button"
+                                  onClick={() => {
+                                    setSelectedCountry(c);
+                                    setIsCountryOpen(false);
+                                    setCountrySearch("");
+                                  }}
+                                  className={`w-full rounded-lg px-3 py-2 text-left text-xs transition ${
+                                    selectedCountry === c
+                                      ? "bg-white text-black font-semibold"
+                                      : "text-neutral-300 hover:bg-white/10 hover:text-white"
+                                  }`}
+                                >
+                                  {c}
+                                </button>
+                              ))
+                            ) : (
+                              <p className="px-3 py-2 text-xs text-neutral-500">
+                                No countries found
+                              </p>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
                 </div>
 
                 {/* Project Description */}

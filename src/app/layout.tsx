@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark overflow-x-hidden">
-      <body className="bg-[#0d0d0d] text-white antialiased overflow-x-hidden min-h-screen">
+      <body className="bg-[#0d0d0d] text-white antialiased scroll-smooth  overflow-x-hidden min-h-screen">
         <Navbar />
         {children}
       </body>

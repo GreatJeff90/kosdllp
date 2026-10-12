@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Bridge() {
   return (
-    <section id="about" className="relative w-full h-[80vh] md:h-screen bg-[#0d0d0d] overflow-hidden border-t border-white/[0.03]">
+    <section id="vision" className="relative w-full h-[80vh] md:h-screen bg-[#0d0d0d] overflow-hidden border-t border-white/[0.03]">
       
       {/* Cinematic Full-Width Background Image with Subtle Entrance Zoom */}
       <motion.div 
