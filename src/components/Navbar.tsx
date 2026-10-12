@@ -7,11 +7,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Careers", href: "/careers" },
+  { label: "Vision", href: "/#vision" },
+  { label: "About", href: "/#about" },
+  { label: "Reach", href: "/#reach" },
+  { label: "Structures", href: "/#structures" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Products", href: "/products" },
 ];
 
 export default function Navbar() {
@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* Center: Floating Dark Pill Menu (Desktop Only) */}
         <div className="hidden md:flex items-center gap-8 rounded-full border border-white/5 bg-[#1a1a1a]/80 px-8 py-2.5 backdrop-blur-md">
-          {NAV_LINKS.filter((link) => link.label !== "Products").map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
@@ -58,15 +58,7 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-3 sm:gap-6">
-          {/* Products link visible only on desktop */}
-          <Link
-            href="/products"
-            className="hidden md:inline-block text-xs font-normal text-neutral-300 transition-colors hover:text-white"
-          >
-            Products
-          </Link>
-
-          {/* Contact Button (visible everywhere) */}
+          {/* Contact Button */}
           <Link
             href="/contact"
             className="rounded-xl bg-white px-4 py-2 text-xs font-medium text-black transition-opacity hover:opacity-90 active:scale-95"
