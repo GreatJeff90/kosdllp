@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = 2026;
 
   return (
     <footer className="relative w-full overflow-hidden bg-[#0a0a0a] border-t border-white/[0.06] text-neutral-400">
