@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
@@ -9,11 +10,19 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 pb-8 md:px-8">
         
         {/* Top Grid: Brand & Navigation */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 ">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           
           {/* Brand Info & Newsletter */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center gap-2.5 group">
+              <div className="relative h-6 w-6 shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="KOSD Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <span className="text-xl font-bold tracking-tight text-white">KOSD</span>
               <span className="text-neutral-500 font-light">|</span>
               <span className="text-xs font-medium tracking-wide text-neutral-300">

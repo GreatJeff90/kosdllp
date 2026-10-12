@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,14 +21,26 @@ export default function Navbar() {
     <header className="relative w-full bg-[#0d0d0d] px-6 py-4 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         
-        {/* Left: Brand Logo */}
-        <Link href="/" className="flex flex-col leading-tight select-none group">
-          <span className="text-xl font-bold tracking-tight text-white">
-            KOSD
-          </span>
-          <span className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
-            KO SOFTWARE DELIGHTS
-          </span>
+        {/* Left: Brand Logo + Wordmark */}
+        <Link href="/" className="flex items-center gap-3 select-none group">
+          <div className="relative h-8 w-8 shrink-0">
+            <Image
+              src="/logo.png"
+              alt="KOSD Logo"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+
+          <div className="flex flex-col leading-tight">
+            <span className="text-xl font-bold tracking-tight text-white">
+              KOSD
+            </span>
+            <span className="text-[9px] font-semibold uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
+              KO SOFTWARE DELIGHTS
+            </span>
+          </div>
         </Link>
 
         {/* Center: Floating Dark Pill Menu (Desktop Only) */}
