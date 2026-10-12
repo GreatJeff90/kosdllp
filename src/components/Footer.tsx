@@ -1,4 +1,3 @@
-'use client';
 import Link from "next/link";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
@@ -31,7 +30,7 @@ export default function Footer() {
               <p className="text-xs font-semibold uppercase tracking-wider text-neutral-300">
                 Subscribe to our newsletter
               </p>
-              <form onSubmit={(e) => e.preventDefault()} className="mt-2.5 flex max-w-sm items-center">
+              <form className="mt-2.5 flex max-w-sm items-center">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -120,7 +119,9 @@ export default function Footer() {
 
         {/* Divider & Legal Sub-bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row text-[11px] text-neutral-500">
-          <p>© {currentYear} KOSD (KO Software Delights). All rights reserved.</p>
+          <p suppressHydrationWarning>
+            © {currentYear} KOSD (KO Software Delights). All rights reserved.
+          </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="transition hover:text-neutral-300">Privacy Policy</Link>
             <Link href="/terms" className="transition hover:text-neutral-300">Terms of Service</Link>
